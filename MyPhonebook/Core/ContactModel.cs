@@ -4,7 +4,7 @@ using System.Text;
 
 namespace MyPhonebook.Core
 {
-    public class ContactCardModel
+    public class ContactModel
     {
         public int Id { get; set; }
         public string FirstName { get; set; } 

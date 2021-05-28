@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MyPhonebook.Core;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
@@ -13,25 +14,8 @@ namespace MyPhonebook.ViewModels
 
         public PhonebookViewModel()
         {
-            _selectedCard = new ContactCardViewModel();
-            _cardList = new ObservableCollection<ContactCardViewModel>()
-            {
-                new ContactCardViewModel
-                {
-                    FirstName = "Anna",
-                    LastName = "Shukalova"
-                },
-                new ContactCardViewModel
-                {
-                    FirstName = "Masha",
-                    LastName = "Kulakova"
-                },
-                new ContactCardViewModel
-                {
-                    FirstName = "Sasha",
-                    LastName = "Ruchnikova"
-                }
-            };
+            var contactList = new ContactRepository().GetAll();
+            _cardList = contactList?.Map();
         }
 
         public string Test { get => _test; set { _test = value; OnPropertyChanged(nameof(Test)); } }

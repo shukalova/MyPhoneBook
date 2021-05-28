@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MyPhonebook.Core;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,98 +7,101 @@ namespace MyPhonebook.ViewModels
 {
     public class ContactCardViewModel: BaseViewModel
     {
-        private string _firstName;
-        private string _lastName;
-        private string _middleName;
-        private string _mobilePhone;
-        private string _homePhone;
-        private string _workPhone;
-        private string _homeAddress;
-        private string _workAddress;
-        private string _note;
+        private ContactModel contact;
 
+        public ContactCardViewModel()
+        {
+            contact = new ContactModel();
+        }
         public string FirstName
         {
-            get => _firstName;
+            get => contact.FirstName;
             set 
             {
-                _firstName = value;
+                contact.FirstName = value;
                 OnPropertyChanged(nameof(FirstName));
             }
         }
         public string LastName
         {
-            get => _lastName;
+            get => contact.LastName;
             set
             {
-                _lastName = value;
+                contact.LastName = value;
                 OnPropertyChanged(nameof(LastName));
             }
         }
 
         public string MiddleName
         {
-            get => _middleName;
+            get => contact.MiddleName;
             set
             {
-                _middleName = value;
+                contact.MiddleName = value;
                 OnPropertyChanged(nameof(MiddleName));
             }
         }
 
-        public string MobilePhone
+        public decimal MobilePhone
         {
-            get => _mobilePhone;
+            get => contact.MobilePhone;
             set
             {
-                _mobilePhone = value;
+                contact.MobilePhone = value;
                 OnPropertyChanged(nameof(MobilePhone));
             }
         }
-        public string HomePhone
+        public decimal HomePhone
         {
-            get => _homePhone;
+            get => contact.HomePhone;
             set
             {
-                _homePhone = value;
+                contact.HomePhone = value;
                 OnPropertyChanged(nameof(HomePhone));
             }
         }
-        public string WorkPhone
+        public decimal WorkPhone
         {
-            get => _workPhone;
+            get => contact.WorkPhone;
             set
             {
-                _workPhone = value;
+                contact.WorkPhone = value;
                 OnPropertyChanged(nameof(WorkPhone));
             }
         }
         public string HomeAddress
         {
-            get => _homeAddress;
+            get => contact.HomeAddress;
             set
             {
-                _homeAddress = value;
+                contact.HomeAddress = value;
                 OnPropertyChanged(nameof(HomeAddress));
             }
         }
         public string WorkAddress
         {
-            get => _workAddress;
+            get => contact.WorkAddress;
             set
             {
-                _workAddress = value;
+                contact.WorkAddress = value;
                 OnPropertyChanged(nameof(WorkAddress));
             }
         }
         public string Note
         {
-            get => _note;
+            get => contact.Note;
             set
             {
-                _note = value;
+                contact.Note = value;
                 OnPropertyChanged(nameof(Note));
             }
         }
+
+        public void BuildViewModel(ContactModel model)
+        {
+            contact = model;
+        }
+
+        public ContactModel DataModel => contact;
     }
 }
