@@ -5,3 +5,4 @@
 /.vs
 /MyPhonebook/.vs/MyPhonebook/v16
 /MyPhonebook/obj
+/MyPhonebook/bin/Debug/netcoreapp3.1
