@@ -6,6 +6,11 @@ namespace MyPhonebook.ViewModels
 {
     public class PhonebookViewModel: BaseViewModel
     {
+        public PhonebookViewModel()
+        {
+            _selectedCard = new ContactCardViewModel();
+        }
+
         private ContactCardViewModel _selectedCard;
         private string _test;
 
