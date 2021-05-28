@@ -44,5 +44,60 @@ namespace MyPhonebook.ViewModels
                 OnPropertyChanged(nameof(MiddleName));
             }
         }
+
+        public string MobilePhone
+        {
+            get => _mobilePhone;
+            set
+            {
+                _mobilePhone = value;
+                OnPropertyChanged(nameof(MobilePhone));
+            }
+        }
+        public string HomePhone
+        {
+            get => _homePhone;
+            set
+            {
+                _homePhone = value;
+                OnPropertyChanged(nameof(HomePhone));
+            }
+        }
+        public string WorkPhone
+        {
+            get => _workPhone;
+            set
+            {
+                _workPhone = value;
+                OnPropertyChanged(nameof(WorkPhone));
+            }
+        }
+        public string HomeAddress
+        {
+            get => _homeAddress;
+            set
+            {
+                _homeAddress = value;
+                OnPropertyChanged(nameof(HomeAddress));
+            }
+        }
+        public string WorkAddress
+        {
+            get => _workAddress;
+            set
+            {
+                _workAddress = value;
+                OnPropertyChanged(nameof(WorkAddress));
+            }
+        }
+        public string Note
+        {
+            get => _note;
+            set
+            {
+                _note = value;
+                OnPropertyChanged(nameof(Note));
+            }
+        }
     }
 }

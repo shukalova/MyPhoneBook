@@ -44,28 +44,28 @@
                     <TextBox Text="{Binding FirstName}" Grid.Row="0" Grid.Column="1"  Margin="5"></TextBox>
 
                     <Label Content="Last Name" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left"/>
-                    <TextBox Text="{Binding Path=LastName}" Grid.Row="1" Grid.Column="1"  Margin="5"></TextBox>
+                    <TextBox Text="{Binding LastName}" Grid.Row="1" Grid.Column="1"  Margin="5"></TextBox>
 
                     <Label Content="Middlename" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Left"/>
-                    <TextBox Text="{Binding Path=Middlename}" Grid.Row="2" Grid.Column="1"  Margin="5"></TextBox>
+                    <TextBox Text="{Binding Middlename}" Grid.Row="2" Grid.Column="1"  Margin="5"></TextBox>
 
                     <Label Content="Mobile Phone" Grid.Row="3" Grid.Column="0" HorizontalAlignment="Left"/>
-                    <TextBox Text="{Binding Path=Skype}" Grid.Row="3" Grid.Column="1" Margin="5"></TextBox>
+                    <TextBox Text="{Binding MobilePhone}" Grid.Row="3" Grid.Column="1" Margin="5"></TextBox>
 
                     <Label Content="Home Phone" Grid.Row="4" Grid.Column="0" HorizontalAlignment="Left" />
-                    <TextBox Text="{Binding Path=Url}" Grid.Row="4" Grid.Column="1" Margin="5"></TextBox>
+                    <TextBox Text="{Binding HomePhone}" Grid.Row="4" Grid.Column="1" Margin="5"></TextBox>
 
                     <Label Content="Work Phone" Grid.Row="5" Grid.Column="0" HorizontalAlignment="Left"/>
-                    <TextBox Text="{Binding Path=Birthday}" Grid.Row="5" Grid.Column="1" Margin="5"></TextBox>
+                    <TextBox Text="{Binding WorkPhone}" Grid.Row="5" Grid.Column="1" Margin="5"></TextBox>
 
                     <Label Content="Home Address" Grid.Row="6" Grid.Column="0" HorizontalAlignment="Left"/>
-                    <TextBox Text="{Binding Path=Address}" Grid.Row="6" Grid.Column="1" Margin="5"></TextBox>
+                    <TextBox Text="{Binding HomeAddress}" Grid.Row="6" Grid.Column="1" Margin="5"></TextBox>
 
                     <Label Content="Work Address" Grid.Row="7" Grid.Column="0" HorizontalAlignment="Left" />
-                    <TextBox Text="{Binding Path=Address}" Grid.Row="7" Grid.Column="1"  Margin="5"></TextBox>
+                    <TextBox Text="{Binding WorkAddress}" Grid.Row="7" Grid.Column="1"  Margin="5"></TextBox>
 
                     <Label Content="Note" Grid.Row="8" Grid.Column="0" HorizontalAlignment="Left" />
-                    <TextBox Text="{Binding Path=Note}" Grid.Row="8" Grid.Column="1" Margin="5"></TextBox>
+                    <TextBox Text="{Binding Note}" Grid.Row="8" Grid.Column="1" Margin="5"></TextBox>
                 </Grid>
             </StackPanel>
         </Border>
