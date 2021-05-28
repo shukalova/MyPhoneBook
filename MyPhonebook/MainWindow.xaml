@@ -15,6 +15,27 @@
             <ColumnDefinition Width="150*"></ColumnDefinition>
             <ColumnDefinition Width="350*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
+        <Border Grid.Row="1" Grid.Column="0">
+            <ListBox Name="cardViewList"  ItemsSource="{Binding CardList}" SelectedItem="{Binding SelectedCard}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Margin="10">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Label Content="{Binding Path=FirstName}" FontSize="16" Grid.Row="0" Grid.Column="0"></Label>
+                                <Label Content="{Binding Path=LastName}" FontSize="12" Grid.Row="1" Grid.Column="0"></Label>
+                            </Grid>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </Border>
         <Border Grid.Row="1" Grid.Column="1">
             <StackPanel>
                 <Grid DataContext="{Binding SelectedCard}">
@@ -40,7 +61,7 @@
                     <TextBox Text="{Binding LastName}" Grid.Row="1" Grid.Column="1"  Margin="5"></TextBox>
 
                     <Label Content="Middlename" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Left"/>
-                    <TextBox Text="{Binding Middlename}" Grid.Row="2" Grid.Column="1"  Margin="5"></TextBox>
+                    <TextBox Text="{Binding MiddleName}" Grid.Row="2" Grid.Column="1"  Margin="5"></TextBox>
 
                     <Label Content="Mobile Phone" Grid.Row="3" Grid.Column="0" HorizontalAlignment="Left"/>
                     <TextBox Text="{Binding MobilePhone}" Grid.Row="3" Grid.Column="1" Margin="5"></TextBox>
