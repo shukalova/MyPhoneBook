@@ -15,6 +15,25 @@ namespace MyPhonebook.Core
             }
         }
 
+        public void Update(IEnumerable<ContactModel> contacts)
+        {
+            using (var context = new MyPhoneDbContext())
+            {
+                context.MyPhonebook.UpdateRange(contacts);
+                context.SaveChanges();
+            }
+        }
+
+        public void Delete(ContactModel contact)
+        {
+            using (var context = new MyPhoneDbContext())
+            {
+                context.MyPhonebook.Remove(contact);
+                context.SaveChanges();
+            }
+        }
+
+
         public IEnumerable<ContactModel> GetAll()
         {
             var context = new MyPhoneDbContext();

@@ -27,15 +27,31 @@
                                 </Grid.RowDefinitions>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
                                 </Grid.ColumnDefinitions>
                                 <Label Content="{Binding Path=FirstName}" FontSize="16" Grid.Row="0" Grid.Column="0"></Label>
-                                <Label Content="{Binding Path=LastName}" FontSize="12" Grid.Row="1" Grid.Column="0"></Label>
+                                <Label Content="{Binding Path=LastName}" FontSize="16" Grid.Row="0" Grid.Column="1"></Label>
+                                <Label Content="{Binding Path=MobilePhone}" FontSize="12" Grid.Row="1" Grid.Column="0"></Label>
                             </Grid>
                         </StackPanel>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>
         </Border>
+        <Border Grid.Row="0" Grid.Column="0">
+            <StackPanel>
+                <Label Content="Search"></Label>
+                <TextBox Text="{Binding Search}" TextChanged="OnSearchChanged"></TextBox>
+            </StackPanel>            
+        </Border>
+        <Border Grid.Row="0" Grid.Column="1">
+            <StackPanel>
+            <Button Content="Add" Width="100" Command="{ Binding AddContact }"/>
+            <Button Content="Delete" Width="100" Command="{ Binding DeleteContact }"/>
+            <Button Content="Save" Width="100" Command="{ Binding SaveContact }"/>
+            </StackPanel>
+        </Border>
+            
         <Border Grid.Row="1" Grid.Column="1">
             <StackPanel>
                 <Grid DataContext="{Binding SelectedCard}">

@@ -8,13 +8,25 @@ namespace MyPhonebook.ViewModels
 {
     public abstract class BaseViewModel: INotifyPropertyChanged, INotifyPropertyChanging
     {
+        private bool _touched = false;
+        public bool Touched => _touched;
         public event PropertyChangedEventHandler PropertyChanged;
         public event PropertyChangingEventHandler PropertyChanging;
 
-        public void OnPropertyChanged([CallerMemberName] string propertyName = "") =>
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        public void MarkAsUntouched()
+        {
+            _touched = false;
+        }
 
-        public void OnPropertyChanging([CallerMemberName] string propertyName = "") =>
+        public void OnPropertyChanged([CallerMemberName] string propertyName = "")
+        {
+            _touched = true;
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        public void OnPropertyChanging([CallerMemberName] string propertyName = "")
+        {
             PropertyChanging?.Invoke(this, new PropertyChangingEventArgs(propertyName));
+        }
     }
 }

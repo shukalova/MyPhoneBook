@@ -21,10 +21,18 @@ namespace MyPhonebook
     /// </summary>
     public partial class MainWindow : Window
     {
+        private PhonebookViewModel _viewModel;
         public MainWindow()
         {
             InitializeComponent();
-            DataContext = new PhonebookViewModel();
+            _viewModel = new PhonebookViewModel();
+            DataContext = _viewModel;
+        }
+
+        private void OnSearchChanged(object sender, TextChangedEventArgs e)
+        {
+            var search = ((TextBox)sender).Text;
+            _viewModel.Search(search);
         }
     }
 }
